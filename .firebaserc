@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "beekeeping-7e7e4": {
+      "hosting": {
+        "beekeeping": [
+          "beekeeping-7e7e4"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "beekeeping-7e7e4"
+  }
+}

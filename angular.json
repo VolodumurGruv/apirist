@@ -100,8 +100,21 @@
             ],
             "scripts": []
           }
+        },
+        "deploy": {
+          "builder": "@angular/fire:deploy",
+          "options": {
+            "prerender": false,
+            "ssr": false,
+            "browserTarget": "beekeeping:build:production",
+            "firebaseProject": "beekeeping-7e7e4",
+            "firebaseHostingSite": "beekeeping-7e7e4"
+          }
         }
       }
     }
+  },
+  "cli": {
+    "analytics": false
   }
 }
