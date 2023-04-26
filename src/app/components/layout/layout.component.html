@@ -1,19 +1,28 @@
+<nav class="nav">
+  <ul class="nav-items">
+    <li class="nav-item">
+      <button class="btn-link font-link" [matMenuTriggerFor]="menu">
+        Menu
+      </button>
 
-  <nav class="nav">
-    <ul class="nav-items">
-      <li class="nav-item">
-        <a routerLink="/about" routerLinkActive="active" class="nav-link">About</a>
-      </li>
-      <li class="nav-item">
-        <button class="btn-link" [matMenuTriggerFor]="families" routerLink="/families" routerLinkActive="active" class="nav-link">Families</button>
-        <mat-menu #families="matMenu">
-          <a routerLink="/addfamily" mat-menu-item>Add family</a>
-        </mat-menu>
-      </li>
-      <li class="nav-item">
-        <a routerLink="/info" routerLinkActive="active" class="nav-link">Information</a>
-      </li>
-    </ul>
-  </nav>
+      <mat-menu #menu="matMenu">
+        <a mat-menu-item class="font-link" routerLink="/families"> Families </a>
+        <a mat-menu-item class="font-link" routerLink="/addfamily">
+          Add family
+        </a>
+      </mat-menu>
+    </li>
+    <li class="nav-item">
+      <a routerLink="/about" routerLinkActive="active" class="font-link"
+        >About</a
+      >
+    </li>
+    <li class="nav-item">
+      <a routerLink="/info" routerLinkActive="active" class="font-link"
+        >Information</a
+      >
+    </li>
+  </ul>
+</nav>
 
 <router-outlet></router-outlet>

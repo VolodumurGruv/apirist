@@ -1,3 +1,11 @@
-<mat-card *ngFor="let family of families">
+<mat-card *ngFor="let family of families$ | async">
   <app-family-item [family]="family"></app-family-item>
+  <mat-card-actions>
+    <button mat-button (click)="redirectToFamily(family.name)">
+      More info
+    </button>
+    <button mat-button (click)="makeRevision(family.name)">
+      Make Revision
+    </button>
+  </mat-card-actions>
 </mat-card>

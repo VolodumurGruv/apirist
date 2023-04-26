@@ -23,4 +23,14 @@ export const CHILDREN_ROUTES: Route[] = [
         (m) => m.AddFamilyComponent
       ),
   },
+  {
+    path: 'family/:name',
+    loadComponent: () =>
+      import('./family/family.component').then((m) => m.FamilyComponent),
+  },
+  {
+    path: 'revision/:name',
+    loadComponent: () =>
+      import('./revision/revision.component').then((m) => m.RevisionComponent),
+  },
 ];

@@ -1,1 +1,12 @@
-<p>family works!</p>
+<mat-card *ngFor="let family of family$ | async">
+  <app-family-item [family]="family"></app-family-item>
+  <mat-card-actions>
+    <button mat-button (click)="familyEdit(family.name)">Edit</button>
+    <button mat-button (click)="makeRevision(family.name)">
+      Make Revision
+    </button>
+    <button mat-button color="warn" (click)="deleteFamily(family.name)">
+      Delete
+    </button>
+  </mat-card-actions>
+</mat-card>

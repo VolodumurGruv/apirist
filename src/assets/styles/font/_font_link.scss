@@ -1,0 +1,15 @@
+.font-link {
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-decoration: none;
+  color: antiquewhite;
+
+  &:hover {
+    color: red;
+  }
+}
+
+.active {
+  color: aqua;
+}

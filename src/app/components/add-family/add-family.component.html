@@ -1,2 +1,33 @@
 <p>add-family works!</p>
-<form ></form>
+<form [formGroup]="familyForm" (ngSubmit)="onSubmit()">
+  <mat-form-field>
+    <mat-label>Name</mat-label>
+    <input matInput type="text" formControlName="name" />
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Frames</mat-label>
+    <input matInput type="number" formControlName="frames" />
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Breed</mat-label>
+    <input matInput type="text" formControlName="breed" />
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Date of creation</mat-label>
+    <input matInput type="date" formControlName="crationDate" />
+  </mat-form-field>
+  <div class="upload">
+    <label for="image">Image</label>
+    <input
+      type="file"
+      id="image"
+      (change)="uploadImage($event)"
+      #upload
+      [style.display]="'none'"
+    />
+    <button mat-raised-button type="button" (click)="upload.click()">
+      Upload
+    </button>
+  </div>
+  <button mat-raised-button type="submit">Submit</button>
+</form>
