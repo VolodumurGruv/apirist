@@ -1,2 +1,40 @@
-<p>revision works!</p>
-<button (click)="revision()">show</button>
+<form [formGroup]="revisionForm" (ngSubmit)="onSubmit()">
+  <mat-form-field>
+    <mat-label>Date of revision</mat-label>
+    <input matInput [matDatepicker]="picker" formControlName="revisionDate" />
+    <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-datepicker #picker></mat-datepicker>
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Added frames</mat-label>
+    <input matInput type="number" formControlName="addedFrames" />
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Removed frames</mat-label>
+    <input matInput type="number" formControlName="removedFrames" />
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Remark</mat-label>
+    <textarea matInput formControlName="remark"></textarea>
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Date of next revision</mat-label>
+    <input
+      matInput
+      [matDatepicker]="nextPicker"
+      formControlName="nextRevision"
+    />
+    <mat-hint>DD/MM/YEAR</mat-hint>
+    <mat-datepicker-toggle
+      matIconSuffix
+      [for]="nextPicker"
+    ></mat-datepicker-toggle>
+    <mat-datepicker #nextPicker></mat-datepicker>
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>What to do next time</mat-label>
+    <textarea matInput formControlName="todoNextTime"></textarea>
+  </mat-form-field>
+
+  <button mat-raised-button type="submit">Submit</button>
+</form>
