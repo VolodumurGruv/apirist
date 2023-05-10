@@ -38,7 +38,7 @@ import {
   ],
 })
 export class RevisionComponent implements OnInit {
-  private name?: string;
+  private name: string = '';
   private family?: Family[];
   private days: number = 7;
   private nextRevision = nextRevisionIn(this.days);
@@ -73,6 +73,11 @@ export class RevisionComponent implements OnInit {
       this.service
         .getFamily(this.name)
         .subscribe((d: Family[]) => (this.family = d));
+    }
+
+    if (this.family) {
+      this.service.editFamily(this.name);
+      console.log(this.name);
     }
   }
 }

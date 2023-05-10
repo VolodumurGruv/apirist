@@ -7,6 +7,7 @@ import {
   query,
   where,
   getDocs,
+  updateDoc,
 } from '@angular/fire/firestore';
 import { Observable } from 'rxjs';
 import { Family } from '../interfaces/family';
@@ -36,4 +37,15 @@ export class FirestoreService {
 
     return collectionData(familiesProfileCollection) as Observable<any>;
   }
+
+  editFamily(name: string) {
+    const familiesProfileCollection = query(
+      collection(this.firestore, 'families'),
+      where('name', '==', name)
+    );
+    // (familiesProfileCollection, { revision: [{ date: '13/05/23' }] });
+    collectionData(familiesProfileCollection).subscribe((b) => console.log(b));
+  }
+
+  deleteFamily() {}
 }
